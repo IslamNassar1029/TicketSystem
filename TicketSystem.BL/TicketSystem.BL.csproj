@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>eccc78e7-03db-4705-9c45-81079b6d8960</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\Departments\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TicketSystem.DAL\TicketSystem.DAL.csproj" />
+  </ItemGroup>
+
+</Project>

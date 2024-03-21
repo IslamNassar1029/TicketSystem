@@ -1,0 +1,42 @@
+﻿@using TicketSystem.DAL.Data.Enums
+@model TicketAddVM
+
+@{
+    var departments = ViewData[Constants.ViewDataKeys.Departments] as IEnumerable<SelectListItem>;
+}
+
+<form asp-action="Add" method="post">
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" placeholder="Enter Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="CreatedDate" class="form-label"></label>
+        <input asp-for="CreatedDate" class="form-control" />
+        <span asp-validation-for="CreatedDate" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="DepartmentId" class="form-label"></label>
+        <select asp-for="DepartmentId" asp-items="departments" class="form-select"></select>
+        <span asp-validation-for="DepartmentId" class="text-danger"></span>
+
+    </div>
+    <div class="mb-3k">
+        <label asp-for="Severity" class="form-label"></label>
+        <select asp-for="Severity" asp-items="Html.GetEnumSelectList<Severity>()" class="form-select"></select>
+        <span asp-validation-for="Severity" class="text-danger"></span>
+
+    </div>
+    <div class="mb-3 form-check">
+        <input asp-for="IsClosed" class="form-check-input" />
+        <label asp-for="IsClosed" class="form-label"></label>
+        <span asp-validation-for="IsClosed" class="text-danger"></span>
+
+    </div>
+    <button type="submit" class="btn btn-primary" id="liveAlertBtn">Submit</button>
+</form>
+
+@section Scripts{
+        <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,19 @@
+﻿@model TicketDetailsVM
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Ticket Details</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text"><strong>ID:</strong> @Model.Id</p>
+            <p class="card-text"><strong>Email:</strong> @Model.Email</p>
+            <p class="card-text"><strong>Created Date:</strong> @Model.CreatedDate</p>
+            <p class="card-text"><strong>Is Closed:</strong> @(Model.IsClosed ? "Yes" : "No")</p>
+            <p class="card-text"><strong>Severity:</strong> @Model.Severity</p>
+            <p class="card-text"><strong>Department ID:</strong> @Model.DepartmentId</p>
+            <p class="card-text"><strong>Department Name:</strong> @Model.DepartmentName</p>
+        </div>
+    </div>
+</div>
+
